@@ -1,0 +1,144 @@
+@media (orientation: portrait) {
+  :root {
+    --piece-size: calc(100vw / 10);
+    --display-text-size: calc(100vw / 10);
+  }
+  .game-over-wrapper {
+    top: calc(
+      var(--navbar-height) + calc(calc(100vh - var(--navbar-height)) * 0.2)
+    );
+  }
+
+  .settings-zone {
+    top: calc(var(--navbar-height));
+    left: calc(50vw - calc(var(--settings-button) / 2));
+  }
+
+  .settings-panel {
+    top: calc(var(--settings-button) + 0.4em);
+    left: calc(
+      calc(
+          calc(var(--settings-panel-width) / 2) -
+            calc(var(--settings-button) / 2)
+        ) * -1
+    );
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --settings-button: 38px;
+    --navbar-height: 25px;
+  }
+
+  .navbar h1 {
+    font-size: 1.2em;
+  }
+
+  .home-icon {
+    height: 18px;
+    width: 18px;
+  }
+
+  .navbar button {
+    font-size: x-small;
+  }
+
+  .settings-panel {
+    font-size: smaller;
+  }
+
+  menu p {
+    margin-block-end: 0.3em;
+    margin-block-start: 0.7em;
+  }
+
+  .swatch {
+    height: 25px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .settings-zone {
+    left: 5%;
+  }
+
+  .settings-panel {
+    font-size: large;
+  }
+
+  .game-over-heading {
+    font-size: calc(var(--display-text-size) * 1.2);
+  }
+
+  .game-over-text {
+    font-size: calc(var(--display-text-size) * 0.7);
+  }
+}
+
+@media screen and (max-width: 590px) and (orientation: landscape) {
+  :root {
+    --col-margin: calc(var(--piece-size) * 0.1);
+    --navbar-height: 0px;
+    --settings-panel-width: 200px;
+  }
+
+  .settings-panel {
+    font-size: xx-small;
+    top: calc(-100px + calc(var(--settings-button) / 2));
+    height: 200px;
+    overflow: auto;
+  }
+
+  .navbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .navbar {
+    padding-left: 1em;
+    padding-right: 0.5em;
+  }
+  .navbar-flex {
+    width: 130px;
+  }
+  .navbar button {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+
+@media screen and (min-width: 591px) and (max-width: 1000px) and (orientation: landscape) {
+  :root {
+    --col-margin: calc(var(--piece-size) * 0.1);
+    --navbar-height: 0px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .settings-panel {
+    font-size: x-small;
+    top: calc(var(--settings-panel-width) * -0.6);
+    top: calc(-140px + calc(var(--settings-button) / 2));
+    height: 280px;
+    overflow: auto;
+  }
+
+  .floating-restart {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 565px) and (max-width: 1000px) {
+  .navbar-flex {
+    width: 150px;
+  }
+  .navbar button {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

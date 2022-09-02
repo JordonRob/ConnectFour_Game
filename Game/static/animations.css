@@ -1,0 +1,124 @@
+:root {
+  --drop-delay: 430ms;
+}
+
+.drop-piece {
+  animation: dropPiece var(--drop-delay) ease-in 1 normal forwards;
+}
+@keyframes dropPiece {
+  from {
+    top: 0;
+  }
+  to {
+    top: calc(var(--drop-places-count) * var(--piece-size));
+  }
+}
+
+.fall-flip {
+  animation: fallFlip var(--drop-delay) ease-in 1 normal none;
+}
+@keyframes fallFlip {
+  0% {
+    transform: rotateY(0turn);
+  }
+  100% {
+    transform: rotateY(1turn);
+  }
+}
+
+.winner {
+  animation-name: winnerSpin, pulse; 
+  animation-duration: 2s, 500ms;
+  animation-delay: 0ms, 2000ms;
+  animation-direction: normal, alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1, infinite;
+}
+@keyframes winnerSpin {
+  from {
+    transform: rotateY(0turn);
+  }
+  to {
+    transform: rotateY(5turn);
+  }
+}
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.5);
+  }
+}
+
+.animate-g-over {
+
+  animation-duration: 5s, 1s;
+  animation-iteration-count: infinite, 1;
+  animation-timing-function: linear, ease-in;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+@keyframes bgColorChange {
+  0% {
+    background-color: rgba(182, 0, 0, 0.85);
+    border: rgba(0, 251, 255, 0.95) groove 3px;
+    border-width: 1.5em 0.4em;
+  }
+  20% {
+    background-color: rgba(255, 123, 0, 0.85);
+    border: rgba(0, 0, 128, 0.95) groove 5px;
+    border-width: 1em 0.2em;
+  }
+  40% {
+    background-color: rgba(0, 229, 255, 0.85);
+    border: rgba(149, 0, 223, 0.85) groove 5px;
+    border-width: 0.5em 0.5em;
+  }
+  60% {
+    background-color: rgba(0, 0, 107, 0.85);
+    border: rgba(246, 255, 0, 0.7) groove 5px;
+    border-width: 0.8em 0.9em;
+  }
+  80% {
+    background-color: rgba(51, 0, 133, 0.85);
+    border: rgba(25, 251, 0, 0.85) groove 5px;
+    border-width: 1.2em 0.7em;
+  }
+  100% {
+    background-color: rgba(182, 0, 0, 0.85);
+    border: rgba(0, 251, 255, 0.95) groove 5px;
+    border-width: 1.5em 0.4em;
+  }
+}
+@keyframes zoomSpinGameOver {
+  from {
+    transform: scale(0.1);
+    opacity: 0.1;
+  }
+  to {
+    transform: scale(1) rotateZ(5turn);
+    opacity: 1;
+  }
+}
+
+.animate-clear-g-over {
+  animation: slideGOverDown 1s ease-in 1 forwards;
+}
+@keyframes slideGOverDown {
+  0% {
+  }
+  50% {
+    top: calc(
+      var(--navbar-height) + calc(calc(100vh - var(--navbar-height)) * 0.25)
+    );
+  }
+  90% {
+    top: calc(
+      var(--navbar-height) + calc(calc(100vh - var(--navbar-height)) * 0.5)
+    );
+  }
+  100% {
+    top: 120vh;
+  }
+}
